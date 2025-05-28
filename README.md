@@ -10,7 +10,7 @@ JowoHub SDK 是一个用于与 JowoHub 平台进行交互的开发工具包，�
 - [docs](docs): 文档目录，包含 API 文档、SDK 集成指南等相关文档。
 - [Demo](Demo): 示例代码目录，提供了Android示例代码，帮助开发者快速上手。
 
-## 三、使用说明
+## 四、使用说明
 ### 1. 如何接入
 参见 [api文档](/docs/JowoHub-sdk接入文档.md)
 ### 2. 如何联系
