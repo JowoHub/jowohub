@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">JOWO SDK Demo</string>
+    <string name="tab_main">Main</string>
+    <string name="tab_block">Block</string>
+    <string name="tab_label">Label</string>
+    <string name="tab_api">API</string>
+    <string name="tab_for_u">For U</string>
+    <string name="unlock_fail">解锁失败</string>
+    <string name="tab_h5">Web</string>
+</resources>

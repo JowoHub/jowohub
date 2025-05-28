@@ -1,0 +1,123 @@
+plugins {
+    alias(libs.plugins.android.application)
+//    alias(libs.plugins.jetbrains.kotlin.android)
+}
+
+android {
+    namespace 'c.plus.plan.skits'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "c.plus.plan.jowosdkdemo"
+        minSdk 21
+        targetSdk 34
+        versionCode 130
+        versionName "1.3.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary true
+        }
+    }
+    signingConfigs {
+        release {
+            storeFile file("demo.jks")
+            storePassword "123456"
+            keyAlias "demo"
+            keyPassword "123456"
+        }
+
+        debug {
+            storeFile file("demo.jks")
+            storePassword "123456"
+            keyAlias "demo"
+            keyPassword "123456"
+        }
+    }
+    buildTypes {
+        debug {
+            minifyEnabled false
+            debuggable true
+            signingConfig signingConfigs.debug
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled true
+            debuggable false
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs "./libs"
+        }
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+
+dependencies {
+//    api project(':jowosdk')
+    implementation(name: 'jowosdk-1.3.0', ext: 'aar')
+
+    // sdk 依赖  start
+    implementation("androidx.room:room-runtime:2.6.1")
+    annotationProcessor("androidx.room:room-runtime:2.6.1")
+
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("org.bouncycastle:bcprov-jdk15on:1.67")
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
+
+
+    implementation("androidx.viewpager2:viewpager2:1.1.0")
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
+
+    implementation("androidx.media3:media3-exoplayer:1.3.1")
+    implementation("androidx.media3:media3-exoplayer-hls:1.3.1")
+    implementation("androidx.media3:media3-ui:1.3.1")
+//    api libs.androidx.room.runtime
+//    annotationProcessor libs.androidx.room.compiler
+
+//    api libs.retrofit
+//    api libs.converter.gson
+//    api libs.bcprov.jdk15on
+//
+//    api libs.androidx.viewpager2
+//    api libs.androidx.recyclerview
+//
+//    implementation libs.androidx.media3.exoplayer
+//    implementation libs.androidx.media3.exoplayer.hls
+//    implementation libs.androidx.media3.ui
+    // sdk 依赖  end
+
+    api libs.androidx.appcompat
+    api libs.material
+
+    api libs.androidx.lifecycle.runtime
+    api libs.androidx.lifecycle.common.java8
+    api libs.androidx.lifecycle.extensions
+    api libs.androidx.legacy.support.v4
+    api libs.androidx.lifecycle.viewmodel
+    api libs.androidx.lifecycle.livedata
+
+    api libs.utilcodex
+
+    implementation  libs.refresh.layout.kernel
+    implementation  libs.refresh.header.classics
+
+    implementation libs.banner
+
+    api libs.glide
+    annotationProcessor libs.compiler
+}
