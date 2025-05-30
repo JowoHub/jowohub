@@ -318,7 +318,7 @@ public class DataApiActivity extends AppCompatActivity {
                 }
             });
         } else if ("fetchDrama".equals(item.getMethod())) {
-            JOWOSdk.fetchDrama(String.valueOf( params.get("dramaId")), new Callback<Drama>() {
+            JOWOSdk.fetchDrama(String.valueOf(params.get("dramaId")), new Callback<Drama>() {
                 @Override
                 public void result(Result<Drama> result) {
                     showResult(item, GsonUtils.toJson(result));
@@ -352,15 +352,15 @@ public class DataApiActivity extends AppCompatActivity {
                 showResult(item, GsonUtils.toJson(result));
             });
         } else if ("fetchEpisodesGreaterNum".equals(item.getMethod())) {
-            JOWOSdk.fetchEpisodesGreaterNum(String.valueOf( params.get("dramaId")), (Integer) params.get("greaterEpisodesNum"), result -> {
+            JOWOSdk.fetchEpisodesGreaterNum(String.valueOf(params.get("dramaId")), (Integer) params.get("greaterEpisodesNum"), result -> {
                 showResult(item, GsonUtils.toJson(result));
             });
         } else if ("lastEpisodesByDramaId".equals(item.getMethod())) {
-            JOWOSdk.lastEpisodesByDramaId(String.valueOf( params.get("dramaId")), result -> {
+            JOWOSdk.lastEpisodesByDramaId(String.valueOf(params.get("dramaId")), result -> {
                 showResult(item, GsonUtils.toJson(result));
             });
         } else if ("fetchEpisodesByNum".equals(item.getMethod())) {
-            JOWOSdk.fetchEpisodesByNum(String.valueOf( params.get("dramaId")), (Integer) params.get("episodesNum"), result -> {
+            JOWOSdk.fetchEpisodesByNum(String.valueOf(params.get("dramaId")), (Integer) params.get("episodesNum"), result -> {
                 showResult(item, GsonUtils.toJson(result));
             });
         } else if ("fetchBlockDrama".equals(item.getMethod())) {
@@ -376,11 +376,11 @@ public class DataApiActivity extends AppCompatActivity {
 //                showResult(item, GsonUtils.toJson(result));
 //            });
         } else if ("postDramaHistory".equals(item.getMethod())) {
-            JOWOSdk.postDramaHistory(String.valueOf( params.get("dramaId")), (Integer) params.get("episodesNum"), (Long) params.get("progressTimeMillis"), result -> {
+            JOWOSdk.postDramaHistory(String.valueOf(params.get("dramaId")), (Integer) params.get("episodesNum"), (Long) params.get("progressTimeMillis"), result -> {
                 showResult(item, GsonUtils.toJson(result));
             });
         } else if ("postDramaCollect".equals(item.getMethod())) {
-            JOWOSdk.postDramaCollect(String.valueOf( params.get("dramaId")), (String) params.get("language"), result -> {
+            JOWOSdk.postDramaCollect(String.valueOf(params.get("dramaId")), (String) params.get("language"), result -> {
                 showResult(item, GsonUtils.toJson(result));
             });
         } else if ("fetchUserDramaCollectsPerPage".equals(item.getMethod())) {
@@ -392,11 +392,11 @@ public class DataApiActivity extends AppCompatActivity {
                 showResult(item, GsonUtils.toJson(result));
             });
         } else if ("fetchUserDrama".equals(item.getMethod())) {
-            JOWOSdk.fetchUserDrama(String.valueOf( params.get("dramaId")), result -> {
+            JOWOSdk.fetchUserDrama(String.valueOf(params.get("dramaId")), result -> {
                 showResult(item, GsonUtils.toJson(result));
             });
         } else if ("lastUserDrama".equals(item.getMethod())) {
-            JOWOSdk.lastUserDrama(String.valueOf( params.get("dramaId")), result -> {
+            JOWOSdk.lastUserDrama(String.valueOf(params.get("dramaId")), result -> {
                 showResult(item, GsonUtils.toJson(result));
             });
         } else if ("fetchUserDramaHistoriesPerPage".equals(item.getMethod())) {
@@ -408,7 +408,7 @@ public class DataApiActivity extends AppCompatActivity {
                 showResult(item, GsonUtils.toJson(result));
             });
         } else if ("lastHistoryByDramaId".equals(item.getMethod())) {
-            JOWOSdk.lastHistoryByDramaId(String.valueOf( params.get("dramaId")), result -> {
+            JOWOSdk.lastHistoryByDramaId(String.valueOf(params.get("dramaId")), result -> {
                 showResult(item, GsonUtils.toJson(result));
             });
         } else if ("fetchForU".equals(item.getMethod())) {
@@ -420,14 +420,14 @@ public class DataApiActivity extends AppCompatActivity {
                 showResult(item, GsonUtils.toJson(result));
             });
         } else if ("fetchEpisodeShareUrl".equals(item.getMethod())) {
-            JOWOSdk.fetchEpisodeShareUrl(String.valueOf( params.get("dramaId")), (Integer) params.get("episodesNum"), result -> {
+            JOWOSdk.fetchEpisodeShareUrl(String.valueOf(params.get("dramaId")), (Integer) params.get("episodesNum"), result -> {
                 showResult(item, GsonUtils.toJson(result));
             });
         } else if ("postFeedback".equals(item.getMethod())) {
             Feedback feedback = new Feedback();
             feedback.setTitle("测试标题");
             feedback.setContent("测试内容");
-            feedback.setDramaId(String.valueOf( params.get("dramaId")));
+            feedback.setDramaId(String.valueOf(params.get("dramaId")));
             feedback.setEpisodesNum((Integer) params.get("episodesNum"));
             feedback.setFeedType(Feedback.TYPE_REPORT);
             feedback.setEmail("test@example.com");

@@ -56,6 +56,7 @@ public class TabForUFragment extends Fragment {
     private int current;
     private boolean play;
     private MainActivity mActivity;
+    private Episodes playingEpisodes;
 
     @Nullable
     @Override
@@ -331,9 +332,15 @@ public class TabForUFragment extends Fragment {
             @Override
             public void onPageSelected(int position) {
                 super.onPageSelected(position);
+                playingEpisodes = mNewList.get(position).getEpisodes();
+                LogUtils.d("DramaForU page selected", position, playingEpisodes.getJowoVid(), playingEpisodes.getEpisodesNum());
                 playCurrent(position);
             }
         });
+    }
+
+    public Episodes getPlayingEpisodes() {
+        return playingEpisodes;
     }
 
     public void playCurrent() {
@@ -361,6 +368,11 @@ public class TabForUFragment extends Fragment {
 
     public void preLoad(int count) {
         mBinding.pager.setOffscreenPageLimit(Math.max(count, 1));
+    }
+
+
+    public int getCurrent() {
+        return current;
     }
 
     private Fragment getFragmentByTag(String tag) {
