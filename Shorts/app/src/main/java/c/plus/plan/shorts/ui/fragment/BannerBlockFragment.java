@@ -9,14 +9,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DiffUtil;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
-import com.blankj.utilcode.util.ActivityUtils;
-import com.blankj.utilcode.util.ArrayUtils;
 import com.blankj.utilcode.util.CollectionUtils;
-import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.ScreenUtils;
 import com.blankj.utilcode.util.SizeUtils;
 import com.blankj.utilcode.util.ThreadUtils;
@@ -39,7 +35,6 @@ import c.plus.plan.shorts.remoteconfig.AdConfig;
 import c.plus.plan.shorts.sdk.SDKExt;
 import c.plus.plan.shorts.ui.adapter.DramaBannerAdapter;
 import c.plus.plan.shorts.ui.adapter.DramaGridAdapter;
-import c.plus.plan.shorts.ui.view.CommonFlexboxLayoutManager;
 import c.plus.plan.shorts.ui.view.CommonStaggeredGridLayoutManager;
 import c.plus.plan.shorts.ui.view.EqualsDiffCallBack;
 import c.plus.plan.shorts.ui.view.GridSpacingItemDecoration;
@@ -53,7 +48,7 @@ public class BannerBlockFragment extends Fragment {
     private final List<Object> mNewList = new ArrayList<>();
     private DramaBannerAdapter mBannerAdapter;
     private final List<Banner> mBannerList = new ArrayList<>();
-    private AdNative tpNative;
+    private AdNative adNative;
     private int firstVisible;
     private int lastVisible;
     public static final int INTERVAL = 3;
@@ -216,14 +211,14 @@ public class BannerBlockFragment extends Fragment {
     }
 
     private void initNative() {
-        tpNative = new AdNative(getActivity(), Constants.AD_FEED_CODE);
+        adNative = new AdNative(getActivity(), Constants.AD_FEED_CODE);
         loadAd();
     }
 
     private void loadAd() {
-        if (tpNative != null && !tpNative.isReady() && !isLoadAd) {
+        if (adNative != null && !adNative.isReady() && !isLoadAd) {
             isLoadAd = true;
-            tpNative.loadAd();
+            adNative.loadAd();
         }
     }
 
@@ -272,8 +267,8 @@ public class BannerBlockFragment extends Fragment {
 
     private AdNative getNativeAd() {
         AdNative adNative = null;
-        if (tpNative != null) {
-            adNative = tpNative;
+        if (this.adNative != null) {
+            adNative = this.adNative;
             if (adNative == null) {
                 loadAd();
             }
@@ -367,8 +362,8 @@ public class BannerBlockFragment extends Fragment {
 
     @Override
     public void onDestroy() {
-        if (tpNative != null) {
-            tpNative.onDestroy();
+        if (adNative != null) {
+            adNative.onDestroy();
         }
         for (Object object : mNewList) {
             if(object instanceof AdNative){

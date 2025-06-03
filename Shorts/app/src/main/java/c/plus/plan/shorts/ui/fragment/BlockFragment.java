@@ -10,11 +10,9 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.blankj.utilcode.util.CollectionUtils;
-import com.blankj.utilcode.util.LogUtils;
 import com.blankj.utilcode.util.ScreenUtils;
 import com.blankj.utilcode.util.SizeUtils;
 import com.blankj.utilcode.util.ThreadUtils;
@@ -47,7 +45,7 @@ public class BlockFragment extends Fragment {
     private List<Object> mOldList = new ArrayList<>();
     private List<Object> mNewList = new ArrayList<>();
     private boolean isLoad;
-    private AdNative tpNative;
+    private AdNative adNative;
     private int firstVisible;
     private int lastVisible;
     //0 inside; 1 up; 2;down;3 up down
@@ -155,13 +153,13 @@ public class BlockFragment extends Fragment {
     }
 
     private void initNative() {
-        tpNative = new AdNative(getActivity(), Constants.AD_FEED_CODE);
+        adNative = new AdNative(getActivity(), Constants.AD_FEED_CODE);
         loadAd();
     }
 
     private void loadAd() {
-        if (tpNative != null && !tpNative.isReady() && !isLoadAd) {
-            tpNative.loadAd();
+        if (adNative != null && !adNative.isReady() && !isLoadAd) {
+            adNative.loadAd();
             isLoadAd = true;
         }
     }
@@ -202,8 +200,8 @@ public class BlockFragment extends Fragment {
 
     private AdNative getNativeAd() {
         AdNative tpCustomNativeAd = null;
-        if (tpNative != null) {
-            tpCustomNativeAd = tpNative;
+        if (adNative != null) {
+            tpCustomNativeAd = adNative;
             if (tpCustomNativeAd == null) {
                 loadAd();
             }
@@ -227,8 +225,8 @@ public class BlockFragment extends Fragment {
 
     @Override
     public void onDestroy() {
-        if(tpNative != null){
-            tpNative.onDestroy();
+        if(adNative != null){
+            adNative.onDestroy();
         }
         for (Object object: mNewList) {
             if(object instanceof AdNative){
