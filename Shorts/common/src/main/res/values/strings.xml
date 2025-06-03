@@ -1,0 +1,5 @@
+<resources>
+    <string name="network_not_good">Please check your network status</string>
+    <string name="cancel">Cancel</string>
+    <string name="channel">google</string>
+</resources>

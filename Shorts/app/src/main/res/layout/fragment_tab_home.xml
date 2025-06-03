@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            app:tabMode="scrollable"
+            app:tabBackground="@color/black"
+            app:tabRippleColor="@color/black"
+            app:tabPaddingStart="9dp"
+            app:tabPaddingEnd="9dp"
+            app:tabPaddingTop="10dp"
+            app:tabPaddingBottom="10dp"
+            android:paddingStart="6dp"
+            android:paddingEnd="6dp"
+            app:tabSelectedTextAppearance="@style/TabTextSelect"
+            app:tabTextAppearance="@style/TabText"
+            app:tabIndicatorFullWidth="false"
+            app:tabIndicatorHeight="0dp" />
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+    <include layout="@layout/_no_data"
+        android:id="@+id/no_data"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+    <include layout="@layout/_no_network"
+        android:id="@+id/no_network"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+</FrameLayout>

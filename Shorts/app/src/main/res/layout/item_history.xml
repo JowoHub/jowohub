@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="130dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginEnd="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv"
+        android:layout_width="130dp"
+        android:layout_height="74dp"
+        android:scaleType="centerCrop"
+        android:background="@drawable/bg_img_empty"
+        app:shapeAppearanceOverlay="@style/RoundDp6ShapeAppearance"/>
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:maxLines="2"
+        android:textSize="@dimen/font_14"
+        android:textColor="@color/gray_500"/>
+</LinearLayout>

@@ -1,0 +1,154 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "79421e107bdcf286eb21aceba6bb25da",
+    "entities": [
+      {
+        "tableName": "users",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `avatar` TEXT, `gender` INTEGER NOT NULL, `intro` TEXT, `nickname` TEXT, `userMediums` TEXT, `blacked` INTEGER NOT NULL, `blacking` INTEGER NOT NULL, `followed` INTEGER NOT NULL, `following` INTEGER NOT NULL, `friend` INTEGER NOT NULL, `countDressItem` INTEGER NOT NULL, `countPraise` INTEGER NOT NULL, `countGiftReceive` INTEGER NOT NULL, `countGiftSend` INTEGER NOT NULL, `countFollowed` INTEGER NOT NULL, `countFollowing` INTEGER NOT NULL, `countPraiseUser` INTEGER NOT NULL, `countTipUser` INTEGER NOT NULL, `countTip` INTEGER NOT NULL, `vipInfo` TEXT, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "avatar",
+            "columnName": "avatar",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "gender",
+            "columnName": "gender",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "intro",
+            "columnName": "intro",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "nickname",
+            "columnName": "nickname",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "userMediums",
+            "columnName": "userMediums",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "blacked",
+            "columnName": "blacked",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "blacking",
+            "columnName": "blacking",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "followed",
+            "columnName": "followed",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "following",
+            "columnName": "following",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "friend",
+            "columnName": "friend",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "countDressItem",
+            "columnName": "countDressItem",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "countPraise",
+            "columnName": "countPraise",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "countGiftReceive",
+            "columnName": "countGiftReceive",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "countGiftSend",
+            "columnName": "countGiftSend",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "countFollowed",
+            "columnName": "countFollowed",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "countFollowing",
+            "columnName": "countFollowing",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "countPraiseUser",
+            "columnName": "countPraiseUser",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "countTipUser",
+            "columnName": "countTipUser",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "countTip",
+            "columnName": "countTip",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "vipInfo",
+            "columnName": "vipInfo",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '79421e107bdcf286eb21aceba6bb25da')"
+    ]
+  }
+}

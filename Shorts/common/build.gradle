@@ -1,0 +1,101 @@
+plugins {
+    alias(libs.plugins.jetbrains.kotlin.android)
+}
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-kapt'
+android {
+    namespace 'c.plus.plan.common'
+    compileSdk 34
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+
+        ndk {
+            moduleName "common"
+            abiFilters 'armeabi-v7a', "arm64-v8a", "x86", "x86_64"
+        }
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
+    }
+
+    externalNativeBuild {
+        cmake {
+            path 'CMakeLists.txt'
+        }
+    }
+
+    buildFeatures {
+        dataBinding true
+        viewBinding true
+    }
+
+    sourceSets {
+        main {
+            manifest.srcFile 'src/main/moduleManifest/AndroidManifest.xml'
+
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+}
+
+dependencies {
+
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("org.bouncycastle:bcprov-jdk15on:1.67")
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
+
+    api libs.androidx.appcompat
+    api libs.material
+
+    api libs.androidx.lifecycle.runtime
+    api libs.androidx.lifecycle.common.java8
+    api libs.androidx.lifecycle.extensions
+    api libs.androidx.legacy.support.v4
+    api libs.androidx.lifecycle.viewmodel
+    api libs.androidx.lifecycle.livedata
+    api libs.glide
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.lifecycle.viewmodel.ktx
+    kapt libs.compiler
+
+    api libs.androidx.room.runtime
+    kapt libs.androidx.room.compiler
+
+    api libs.retrofit
+    api libs.converter.gson
+    api libs.bcprov.jdk15on
+
+    api libs.androidx.viewpager2
+    api libs.androidx.recyclerview
+
+    api libs.mmkv
+    api libs.utilcodex
+
+    api libs.eventbus
+}

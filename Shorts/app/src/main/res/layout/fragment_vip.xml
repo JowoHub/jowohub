@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.scwang.smart.refresh.layout.SmartRefreshLayout
+        android:id="@+id/srl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <!--        <com.scwang.smart.refresh.header.ClassicsHeader-->
+        <!--            android:id="@+id/header"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            app:srlEnableLastTime="false"-->
+        <!--            app:srlAccentColor="@color/red"-->
+        <!--            app:srlPrimaryColor="@color/black"/>-->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            app:layout_srlSpinnerStyle="Scale"
+            app:layout_srlBackgroundColor="#00000000">
+            <pl.droidsonroids.gif.GifImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="centerCrop"
+                android:layout_gravity="center"
+                android:src="@drawable/loading" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+            <LinearLayout
+                android:id="@+id/ll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:id="@+id/sub_head"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="8dp"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="15dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/font_18"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:text="@string/sub_vip"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/vip_all_free"
+                        android:textSize="@dimen/font_14"
+                        android:layout_marginStart="10dp"
+                        android:textColor="@color/white_opacity_50"/>
+                </LinearLayout>
+                <com.youth.banner.Banner
+                    android:id="@+id/banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    app:banner_infinite_loop="false"
+                    app:banner_auto_loop="false"
+                    android:layout_marginTop="10dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="15dp"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="15dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/font_18"
+                        android:textColor="@color/white"
+                        android:textStyle="bold"
+                        android:text="@string/top_up"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/top_up_coin"
+                        android:textSize="@dimen/font_14"
+                        android:layout_marginStart="10dp"
+                        android:textColor="@color/white_opacity_50"/>
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_coin"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="15dp"
+                    android:layout_marginTop="15dp"/>
+            </LinearLayout>
+            <include layout="@layout/_no_data"
+                android:id="@+id/no_data"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+            <include layout="@layout/_no_network"
+                android:id="@+id/no_network"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+        </FrameLayout>
+    </com.scwang.smart.refresh.layout.SmartRefreshLayout>
+
+</FrameLayout>

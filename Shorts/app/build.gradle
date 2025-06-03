@@ -1,0 +1,147 @@
+plugins {
+    alias(libs.plugins.android.application)
+    id 'kotlin-android'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+}
+
+// 读取config
+def configPropertiesFile = rootProject.file("local.properties")
+def configProperties = new Properties()
+configProperties.load(new FileInputStream(configPropertiesFile))
+
+android {
+    namespace 'c.plus.plan.shorts'
+    compileSdk 35
+
+    signingConfigs {
+        release {
+            storeFile file("demo.jks")
+            storePassword "123456"
+            keyAlias "demo"
+            keyPassword "123456"
+        }
+
+        debug {
+            storeFile file("demo.jks")
+            storePassword "123456"
+            keyAlias "demo"
+            keyPassword "123456"
+        }
+    }
+
+    defaultConfig {
+        applicationId "c.plus.plan.jowosdkdemo"
+        minSdk 21
+        targetSdk 34
+        versionCode 133
+        versionName "1.3.3"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary true
+        }
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation": "$projectDir/schemas".toString()]
+            }
+        }
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDirs "./libs"
+        }
+    }
+}
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile.class){
+    kotlinOptions {
+        jvmTarget = "11"
+    }
+}
+
+dependencies {
+    api project(':common')
+
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.18'//一个开源gif控件
+
+    // sdk 依赖  start
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("org.bouncycastle:bcprov-jdk15on:1.67")
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
+
+
+    implementation("androidx.viewpager2:viewpager2:1.1.0")
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
+
+    implementation("androidx.media3:media3-exoplayer:1.3.1")
+    implementation("androidx.media3:media3-exoplayer-hls:1.3.1")
+    implementation("androidx.media3:media3-ui:1.3.1")
+    // 请注意保持与主包版本同步更新
+    implementation 'com.google.code.gson:gson:2.8.6'
+
+    api libs.androidx.appcompat
+    api libs.material
+
+
+    api libs.androidx.room.runtime
+    kapt libs.androidx.room.compiler
+
+    api libs.androidx.lifecycle.runtime
+    api libs.androidx.lifecycle.common.java8
+    api libs.androidx.lifecycle.extensions
+    api libs.androidx.legacy.support.v4
+    api libs.androidx.lifecycle.viewmodel
+    api libs.androidx.lifecycle.livedata
+
+    api libs.utilcodex
+
+    implementation libs.refresh.layout.kernel
+    implementation libs.refresh.header.classics
+
+    implementation libs.banner
+
+    api libs.glide
+    kapt libs.compiler
+
+    implementation(name: 'jowosdk-1.3.3', ext: 'aar')
+
+    api libs.bcprov.jdk15on
+
+    api libs.androidx.viewpager2
+    api libs.androidx.recyclerview
+
+    api libs.androidx.media3.exoplayer
+    api libs.androidx.media3.exoplayer.hls
+    api libs.androidx.media3.ui
+
+    implementation libs.billing
+
+
+    implementation libs.flexbox
+}
