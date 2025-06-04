@@ -393,6 +393,11 @@ boolean checkLock, boolean historyEnable, PlayerUiStyle playerUiStyle)
 ```
 fragment.setOnShowListener(onShowListener);
 fragment.setOnPlayerListener(onPlayerListener);
+
+/**
+ * ExoPlayer播放器事件监听
+ */
+fragment.setAndroidPlayerListener(onAnddroidPlayerListener);
 ```
 ### 3.2 获取播放单剧DramaEpisodesPlayerUiFragment
 - 用于实现单个短剧多级放的页面
@@ -415,6 +420,12 @@ boolean checkLock, boolean historyEnable, PlayerUiStyle playerUiStyle)
 ```
 fragment.setOnShowListener(onShowListener);
 fragment.setOnPlayerListener(onPlayerListener);
+
+
+/**
+ * ExoPlayer播放器事件监听
+ */
+fragment.setAndroidPlayerListener(onAnddroidPlayerListener);
 ``` 
 
 ### 3.3 PlayerUiStyle 属性说明
@@ -462,9 +473,9 @@ fragment.setOnPlayerListener(onPlayerListener);
 - setTimePositionColor 播放进度颜色
 - setTimeDurationColor 播放总时长颜色
 - setHeaderPaddingTop 顶部padding 用来fragment全屏时设置
-- setSubtitleSize 外挂字幕文字大小
-- setSubtitleColor 外挂字幕文字颜色
-- setSubtitleBackgroundColor 外挂字幕文字背景色
+- ~~setSubtitleSize 外挂字幕文字大小 (已弃用)~~
+- ~~setSubtitleColor 外挂字幕文字颜色 (已弃用)~~
+- ~~setSubtitleBackgroundColor 外挂字幕文字背景色 (已弃用)~~
 - setLoadingRes 自定义加载view
 - setPlayIconRes 播放图标
 
