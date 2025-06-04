@@ -1,4 +1,4 @@
-# JowoHub SDK：海量正版短剧内容，一键解决您的视频内容难题 (JowoHub Short-Form Drama SDK: Massive Licensed Short-Form Drama Content, Solve Your Video Content Problem with One Click)
+# JowoHub SDK：海量正版短剧内容，一键解决您的视频内容难题
 
 ## 一、短剧SDK项目介绍
 JowoHub 短剧 SDK 是一款专为移动应用开发者打造的强大工具，旨在帮助您**一键集成海量正版短剧内容**，无需自建视频库，轻松实现内容出海，提升用户活跃度，并实现高效变现。 还在为缺乏优质视频内容而烦恼吗？ JowoHub SDK 帮您轻松解决！
