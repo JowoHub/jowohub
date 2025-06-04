@@ -36,3 +36,47 @@ JowoHub 短剧 SDK 是一款专为移动应用开发者打造的强大工具，�
 如有任何问题或建议，请通过以下方式联系我们：
 
 - 微信联系：Diudiucy-best
+
+# JowoHub SDK: Massive Library of Licensed Short-Form Video Content, Solve Your Video Content Needs with One Click
+
+## I. Short-Form Video SDK Project Introduction
+
+The JowoHub Short-Form Video SDK is a powerful tool designed for mobile application developers. It aims to help you **integrate a massive library of licensed short-form video content with one click**, eliminating the need to build your own video library. Easily expand your content overseas, increase user engagement, and achieve efficient monetization.  Still worried about the lack of high-quality video content? JowoHub SDK helps you solve it easily!
+
+## II. Core Advantages
+
+*   **Massive Library of Licensed Short-Form Video Content:** Covers various themes to meet the viewing needs of different users. No need to invest heavily in building your own video library, helping you expand your content overseas.
+*   **One-Click Integration:** Easy-to-use SDK, quickly integrated into your application, saving development time and costs.
+*   **Flexible Monetization Models:** Supports various monetization methods such as advertising and subscriptions. You retain 100% of the revenue.
+*   **Deep Customization:** UI can be customized according to your application style, creating a seamless user experience.
+*   **High-Performance Streaming Media:** Provides a smooth, high-definition viewing experience, supporting global CDN acceleration.
+*   **Intelligent Recommendation:** Recommends personalized short-form video content based on user interests.
+*   **Multi-Language Support:** Helps your application reach the global market and achieve content localization.
+*   **Copyright Protection:** All content is officially licensed, avoiding copyright risks.
+
+**Suitable Scenarios:**
+
+*   Video Apps (lacking high-quality content)
+*   Social Apps (needing rich content)
+*   Reading Apps (expanding content formats)
+*   Tool Apps (increasing user stickiness)
+*   Any application that wants to quickly have a massive library of video content and expand into overseas markets.
+
+**Keywords:** Short-form video, short video, mobile application, SDK, API, monetization, user growth, video stream, content library, licensed content, JowoHub, Douyin (TikTok), Kuaishou, video platform, content going overseas, content localization, overseas market, globalization, video content solution, video content missing
+
+## III. Directory Introduction
+
+- [README.md](README.md): This document, the overview document for the JowoHub SDK.
+- [docs](docs): Documentation directory, including API documentation, SDK integration guides, and other related documents.
+- [Demo](Demo): Sample code directory, providing Android sample code, fully demonstrating how to call the JowoHub SDK API, helping developers get started quickly.
+- [Shorts](Shorts): Sample APP, demonstrating how to use the JowoHub SDK's Android application.
+
+## IV. Instructions for Use
+
+### 1. How to Integrate
+See [API Documentation](/docs/JowoHub-sdk接入文档.md) (Note: The link is in Chinese in the original document)
+### 2. How to Contact
+If you have any questions or suggestions, please contact us through the following methods:
+
+- WeChat Contact: Diudiucy-best
+
