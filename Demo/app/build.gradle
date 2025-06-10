@@ -11,8 +11,8 @@ android {
         applicationId "c.plus.plan.jowosdkdemo"
         minSdk 21
         targetSdk 34
-        versionCode 133
-        versionName "1.3.3"
+        versionCode 134
+        versionName "1.3.4"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -67,7 +67,7 @@ android {
 
 dependencies {
 //    api project(':jowosdk')
-    implementation(name: 'jowosdk-1.3.2', ext: 'aar')
+    implementation(name: 'jowosdk-1.3.4', ext: 'aar')
 
     // sdk 依赖  start
     implementation("androidx.room:room-runtime:2.6.1")
