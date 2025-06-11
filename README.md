@@ -25,7 +25,7 @@ JowoHub 短剧 SDK 是一款专为移动应用开发者打造的强大工具，�
 
 ## 三、目录简介
 - [README.md](README.md): 本文档，JowoHub SDK 的概述文档。
-- [docs](docs): 文档目录，包含 API 文档、SDK 集成指南等相关文档。
+- [docs](docs): 文档目录，包含 API 文档、SDK 集成指南、更新日志等相关文档。
 - [Demo](Demo): 示例代码目录，提供了Android示例代码，完整演示如何调用 JowoHub SDK 的api，帮助开发者快速上手。
 - [Shorts](Shorts): 示例APP，演示如何使用 JowoHub SDK 的Android应用。
 
