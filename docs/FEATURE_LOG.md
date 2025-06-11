@@ -14,10 +14,10 @@
   ```
 - 可获取当前界面的播放进度
     ``` java
-    public long getCurrentPosition()
+    public long getPlayerCurrentPosition()
     ```
 - 可设置当前界面的播放速度
     ``` java
-    public boolean setSpeed(float speed)
+    public boolean setPlayerSpeed(float speed)
     ```
 - 修复已知bug
