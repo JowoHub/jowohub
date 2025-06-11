@@ -74,7 +74,7 @@ The JowoHub Short-Form Video SDK is a powerful tool designed for mobile applicat
 ## IV. Instructions for Use
 
 ### 1. How to Integrate
-See [API Documentation](/docs/JowoHub-sdk接入文档.md) (Note: The link is in Chinese in the original document)
+See [API Documentation](/docs/JowoHub-sdk接入文档.md)
 ### 2. How to Contact
 If you have any questions or suggestions, please contact us through the following methods:
 
