@@ -131,6 +131,11 @@ public class TabForUFragment extends Fragment {
                 PlayerActivity.start(getContext(), drama.getJowoVid(), targetEpisodes.getEpisodesNum(), targetEpisodes.getCover(), 0);
             }
         }
+
+        @Override
+        public void controllerVisible(Drama drama, Episodes episodes, boolean visible) {
+            LogUtils.dTag(TAG, "controllerVisible", drama.getJowoVid(), episodes.getEpisodesNum(), visible);
+        }
     };
 
     private final Listener.OnShowListener onShowListener = new Listener.OnShowListener() {

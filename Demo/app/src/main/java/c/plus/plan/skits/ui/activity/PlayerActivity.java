@@ -122,6 +122,16 @@ public class PlayerActivity extends AppCompatActivity {
                 PlayerActivity.this.finish();
             }
         }
+
+        @Override
+        public void controllerVisible(Drama drama, Episodes episodes, boolean visible) {
+            LogUtils.dTag(TAG, "controllerVisible", drama.getJowoVid(), episodes.getEpisodesNum(), visible);
+            // controller的显隐回调 可以根据当前播放剧集是不是第一次播放控制bars的显隐等逻辑
+//            if (mFragment != null) {
+//              View view = mFragment.requireView();
+//              view.findViewById()
+//            }
+        }
     };
 
     private final Listener.OnShowListener onShowListener = new Listener.OnShowListener() {

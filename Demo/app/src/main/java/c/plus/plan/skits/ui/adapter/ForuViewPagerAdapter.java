@@ -82,6 +82,18 @@ public class ForuViewPagerAdapter extends FragmentStateAdapter {
                     return true;
 
                 }
+
+                @Override
+                public boolean isPlayCurrent(String dramaId, int episodesNum) {
+                    if (fragmentWeakReference.get() instanceof TabForUFragment) {
+                        TabForUFragment tabForUFragment = (TabForUFragment) fragmentWeakReference.get();
+                        if (tabForUFragment != null) {
+                            return tabForUFragment.getPlayingEpisodes().getJowoVid().equals(dramaId) &&
+                                    tabForUFragment.getPlayingEpisodes().getEpisodesNum() == episodesNum;
+                        }
+                    }
+                    return false;
+                }
             });
             return fragment;
         }
