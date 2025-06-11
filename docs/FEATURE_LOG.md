@@ -1,6 +1,6 @@
 # JowoHub SDK 更新日志
 
-Please refer to the English document here: [EN](docs/FEATURE_LOG_EN.md)
+Please refer to the English document here: [EN](FEATURE_LOG_EN.md)
 
 ## v1.3.5
 - OnPlayerListener增加回调
