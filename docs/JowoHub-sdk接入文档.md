@@ -1,4 +1,4 @@
-# JowoHub SDK 短剧SDK(1.3.0)接入文档
+# JowoHub SDK 短剧SDK接入文档
 
 <!-- /TOC -->
 - [短剧sdk接入](#短剧sdk接入)
